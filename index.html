@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantix - تحكم في مخزونك</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Animate On Scroll Library (for animations) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Custom Styles -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px 0 rgba(65, 132, 234, 0.9);
+        }
+        .pricing-card:hover {
+            transform: scale(1.05);
+            border-color: #4A90E2;
+        }
+        .whatsapp-button {
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .gemini-feature-card {
+            background: #f0f4ff;
+            border: 1px solid #d9e2ff;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">Quantix</h1>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#features" class="nav-link text-gray-600 hover:text-blue-500">المميزات</a>
+                <a href="#preview" class="nav-link text-gray-600 hover:text-blue-500">لقطات من البرنامج</a>
+                <a href="#testimonials" class="nav-link text-gray-600 hover:text-blue-500">آراء المستخدمين</a>
+                <a href="#pricing" class="nav-link text-gray-600 hover:text-blue-500">الأسعار</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-500">تواصل معنا</a>
+            </div>
+            <a href="#pricing" class="nav-link hidden md:block bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-600 transition-colors">إبدأ الآن</a>
+        </nav>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section id="home" class="hero-gradient text-center min-h-screen flex items-center justify-center py-20 px-4" >
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 mb-4">
+                📦 تحكم في مخزونك، فينما كنتي!
+            </h1>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 mb-8">
+                نظام احترافي وسهل لتسيير المنتجات، الطلبيات، الفواتير، والمخزون في منصة واحدة.
+            </p>
+            <a href="#pricing" class="nav-link cta-button inline-block bg-blue-500 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg">
+             جرب الآن مجاناً
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. Features -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800">مميزات <span class="text-blue-500">Quantix</span></h2>
+                <p class="text-gray-500 mt-2">كل ما تحتاجه لتنمية أعمالك في مكان واحد.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-gray-100 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-500 text-5xl mb-4">✅</div><h3 class="text-xl font-bold mb-2">تتبع مباشر للمخزون</h3>
+                </div>
+                <div class="p-6 bg-gray-100 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-500 text-5xl mb-4">🧾</div><h3 class="text-xl font-bold mb-2">إنشاء فواتير احترافية</h3>
+                </div>
+                <div class="p-6 bg-gray-100 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-500 text-5xl mb-4">🔔</div><h3 class="text-xl font-bold mb-2">تنبيهات عند نفاد الكمية</h3>
+                </div>
+                <div class="p-6 bg-gray-100 rounded-xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-blue-500 text-5xl mb-4">🖥️</div><h3 class="text-xl font-bold mb-2">واجهة سهلة الاستعمال</h3>
+                </div>
+                <div class="p-6 bg-gray-100 rounded-xl" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-blue-500 text-5xl mb-4">🖨️</div><h3 class="text-xl font-bold mb-2">يدعم الطباعة والتقارير</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Live Preview -->
+    <section id="preview" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800">لقطات من البرنامج</h2>
+                <p class="text-gray-500 mt-2">شاهد كيف تبدو واجهة Quantix البديهية والفعّالة.</p>
+            </div>
+            <div class="relative">
+                <div id="image-carousel" class="flex overflow-x-auto space-x-8 space-x-reverse pb-4 no-scrollbar" style="scroll-snap-type: x mandatory;">
+                    <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=Dashboard" alt="Dashboard Preview" class="rounded-lg shadow-xl w-4/5 md:w-2/3 lg:w-1/2 flex-shrink-0" style="scroll-snap-align: center;" data-aos="zoom-in">
+                    <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=Stock+Table" alt="Stock Table Preview" class="rounded-lg shadow-xl w-4/5 md:w-2/3 lg:w-1/2 flex-shrink-0" style="scroll-snap-align: center;" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=Invoice+Generator" alt="Invoice Generator Preview" class="rounded-lg shadow-xl w-4/5 md:w-2/3 lg:w-1/2 flex-shrink-0" style="scroll-snap-align: center;" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=Reports" alt="Reports Preview" class="rounded-lg shadow-xl w-4/5 md:w-2/3 lg:w-1/2 flex-shrink-0" style="scroll-snap-align: center;" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=Dashboard" alt="Dashboard Preview" class="rounded-lg shadow-xl w-4/5 md:w-2/3 lg:w-1/2 flex-shrink-0" style="scroll-snap-align: center;">
+                </div>
+                 <button id="prev-btn" class="absolute top-1/2 left-0 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full shadow-md z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button id="next-btn" class="absolute top-1/2 right-0 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full shadow-md z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800">ماذا يقول عملاؤنا؟</h2>
+                <p class="text-gray-500 mt-2">آراء حقيقية من مستخدمين سعداء.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 p-8 rounded-xl" data-aos="fade-left" data-aos-duration="800">
+                    <p class="text-gray-600 mb-6 text-lg italic">"من بعد ما جربت Quantix، خدمتي ولات منظمة والأرباح تزادت!"</p>
+                    <div class="flex items-center"><div class="ml-4"><p class="font-bold text-gray-800">سعيد، تاجر إلكترونيات</p></div></div>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-xl" data-aos="fade-right" data-aos-duration="800">
+                    <p class="text-gray-600 mb-6 text-lg italic">"برنامج خفيف، واضح، وساعدني بزاف فالتحكم فالمخزون."</p>
+                    <div class="flex items-center"><div class="ml-4"><p class="font-bold text-gray-800">أمينة، صاحبة متجر ملابس</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 5. Pricing -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800">خطط اشتراك مرنة</h2>
+                <p class="text-gray-500 mt-2">اختر الخطة التي تناسب حجم أعمالك.</p>
+            </div>
+             <!-- Gemini Feature: AI Plan Recommender -->
+            <div class="mb-12 gemini-feature-card p-8 rounded-xl shadow-lg" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-center mb-4">✨ لست متأكداً أي خطة تختار؟ دع مساعدنا الذكي يساعدك!</h3>
+                <div class="max-w-2xl mx-auto">
+                    <div class="mb-4">
+                        <label for="businessDesc" class="block mb-2 font-bold text-gray-700">صف لنا طبيعة عملك:</label>
+                        <textarea id="businessDesc" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="مثال: لدي متجر إلكتروني صغير لبيع الملابس، وأحتاج لتتبع المخزون وإصدار فواتير بسيطة."></textarea>
+                    </div>
+                    <button id="recommendPlanBtn" class="w-full bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center">
+                        <span id="recommendPlanText">احصل على توصية</span>
+                        <div id="recommendPlanLoader" class="loader hidden ml-3"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div id="plan-free" class="pricing-card border-2 border-gray-200 rounded-lg p-8 text-center transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-4">مجاني</h3><p class="text-gray-500 mb-6">نسخة محدودة لتجربته</p><p class="text-4xl font-bold mb-6">0<span class="text-lg font-normal"> درهم</span></p><button class="w-full bg-gray-200 text-gray-800 font-bold py-3 rounded-lg hover:bg-gray-300">ابدأ التجربة</button>
+                </div>
+                <div id="plan-pro" class="pricing-card border-2 border-blue-500 rounded-lg p-8 text-center transition-transform duration-300 relative" data-aos="fade-up" data-aos-delay="200">
+                    <span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full absolute -top-4 right-1/2 translate-x-1/2">الأكثر شيوعًا</span>
+                    <h3 class="text-2xl font-bold mb-4">احترافي</h3><p class="text-gray-500 mb-6">كل الميزات + دعم فني</p><p class="text-4xl font-bold mb-6">450<span class="text-lg font-normal"> درهم</span></p><button class="w-full bg-blue-500 text-white font-bold py-3 rounded-lg hover:bg-blue-600">اختر الخطة</button>
+                </div>
+                <div id="plan-advanced" class="pricing-card border-2 border-gray-200 rounded-lg p-8 text-center transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-bold mb-4">متقدم</h3><p class="text-gray-500 mb-6">للشركات الكبيرة مع تقارير مفصلة</p><p class="text-4xl font-bold mb-6">999<span class="text-lg font-normal"> درهم</span></p><button class="w-full bg-gray-200 text-gray-800 font-bold py-3 rounded-lg hover:bg-gray-300">اختر الخطة</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact -->
+    <section id="contact" class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">هل لديك أسئلة؟</h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">نحن هنا للمساعدة. تواصل معنا عبر واتساب أو أرسل لنا رسالة.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="whatsapp-button bg-green-500 text-white font-bold py-3 px-8 rounded-full flex items-center gap-3 text-lg hover:bg-green-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    <span>تواصل عبر واتساب</span>
+                </a>
+                <p class="text-gray-400">أو</p>
+                <a href="mailto:contact@quantix.com" class="border border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-gray-800 transition-colors">اطلب عرضًا</a>
+            </div>
+            <div class="mt-12"><p class="mb-4">تابعنا على:</p><div class="flex justify-center gap-6"><a href="#" class="text-gray-400 hover:text-white">فيسبوك</a><a href="#" class="text-gray-400 hover:text-white">انستغرام</a><a href="#" class="text-gray-400 hover:text-white">لينكد إن</a></div></div>
+        </div>
+    </section>
+    
+    <!-- Recommendation Modal -->
+    <div id="recommendationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-2xl max-w-lg w-full text-center" data-aos="zoom-in">
+            <h3 class="text-2xl font-bold mb-4">التوصية المناسبة لك</h3>
+            <div id="modalBody" class="text-right mb-6"></div>
+            <button id="closeModalBtn" class="bg-blue-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-600 transition-colors">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 text-center py-6">
+        <div class="container mx-auto px-6"><p>&copy; 2025 Quantix. جميع الحقوق محفوظة.</p></div>
+    </footer>
+
+    <!-- Custom Scripts -->
+    <script>
+        // --- Gemini API Call Function ---
+        async function callGeminiAPI(prompt) {
+            const apiKey = ""; // Leave empty, will be handled by the environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{
+                    role: "user",
+                    parts: [{ text: prompt }]
+                }]
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    return result.candidates[0].content.parts[0].text;
+                } else {
+                    console.error("Unexpected API response structure:", result);
+                    return "عذراً، حدث خطأ أثناء معالجة الطلب. يرجى المحاولة مرة أخرى.";
+                }
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                return "عذراً، لا يمكن الوصول إلى الخدمة حالياً. يرجى التحقق من اتصالك بالإنترنت والمحاولة لاحقاً.";
+            }
+        }
+
+        // --- AI Plan Recommender ---
+        const recommendPlanBtn = document.getElementById('recommendPlanBtn');
+        const recommendPlanLoader = document.getElementById('recommendPlanLoader');
+        const recommendPlanText = document.getElementById('recommendPlanText');
+        const modal = document.getElementById('recommendationModal');
+        const modalBody = document.getElementById('modalBody');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        recommendPlanBtn.addEventListener('click', async () => {
+            const businessDesc = document.getElementById('businessDesc').value.trim();
+            if (!businessDesc) {
+                alert("الرجاء وصف طبيعة عملك أولاً.");
+                return;
+            }
+
+            // Show loader
+            recommendPlanLoader.classList.remove('hidden');
+            recommendPlanText.classList.add('hidden');
+            recommendPlanBtn.disabled = true;
+
+            const prompt = `بناءً على وصف العمل التالي: "${businessDesc}", قم بتوصية إحدى خطط الاشتراك التالية (مجاني, احترافي, متقدم) مع شرح موجز لسبب اختيارك. يجب أن تكون التوصية النهائية واحدة من هذه الكلمات فقط: free, pro, advanced. واعرض الشرح في فقرة منفصلة.`;
+
+            const response = await callGeminiAPI(prompt);
+            
+            // Basic parsing of the response
+            let recommendedPlan = 'free'; // default
+            let explanation = response;
+
+            const lowerCaseResponse = response.toLowerCase();
+            if (lowerCaseResponse.includes('pro') || lowerCaseResponse.includes('احترافي')) {
+                recommendedPlan = 'pro';
+            } else if (lowerCaseResponse.includes('advanced') || lowerCaseResponse.includes('متقدم')) {
+                recommendedPlan = 'advanced';
+            }
+
+            modalBody.innerHTML = `<p class="mb-4">${explanation}</p><p class="font-bold">الخطة الموصى بها: <span class="text-blue-600">${recommendedPlan.toUpperCase()}</span></p>`;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Highlight the recommended plan
+            document.querySelectorAll('.pricing-card').forEach(card => card.style.boxShadow = 'none');
+            const recommendedCard = document.getElementById(`plan-${recommendedPlan}`);
+            if(recommendedCard) {
+                recommendedCard.style.boxShadow = '0 0 20px rgba(59, 130, 246, 0.7)';
+            }
+
+
+            // Hide loader
+            recommendPlanLoader.classList.add('hidden');
+            recommendPlanText.classList.remove('hidden');
+            recommendPlanBtn.disabled = false;
+        });
+        
+        closeModalBtn.addEventListener('click', () => {
+             modal.classList.add('hidden');
+             modal.classList.remove('flex');
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                 modal.classList.add('hidden');
+                 modal.classList.remove('flex');
+            }
+        });
+
+        // --- Smooth Scrolling for Anchor Links ---
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // --- Automatic & Manual Image Carousel ---
+        const carousel = document.getElementById('image-carousel');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let scrollInterval, pauseTimeout;
+        const originalImageCount = 4;
+
+        const startAutoScrolling = () => {
+            clearInterval(pauseTimeout);
+            clearInterval(scrollInterval);
+            scrollInterval = setInterval(() => {
+                const slideWidth = carousel.querySelector('img').getBoundingClientRect().width;
+                const gap = 32;
+                const scrollableWidthOfOriginals = (slideWidth + gap) * originalImageCount;
+                if (carousel.scrollLeft >= scrollableWidthOfOriginals) {
+                    carousel.scrollLeft = 0;
+                } else {
+                    carousel.scrollLeft += 1;
+                }
+            }, 20);
+        };
+
+        const stopAutoScrolling = () => clearInterval(scrollInterval);
+        const temporaryPause = () => {
+            stopAutoScrolling();
+            clearTimeout(pauseTimeout);
+            pauseTimeout = setTimeout(startAutoScrolling, 5000); 
+        };
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: carousel.querySelector('img').clientWidth + 32, behavior: 'smooth' });
+            temporaryPause();
+        });
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -(carousel.querySelector('img').clientWidth + 32), behavior: 'smooth' });
+            temporaryPause();
+        });
+        carousel.addEventListener('mouseenter', stopAutoScrolling);
+        carousel.addEventListener('mouseleave', startAutoScrolling);
+        window.addEventListener('load', startAutoScrolling);
+    </script>
+    
+    <!-- AOS Script Initialization -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+        });
+    </script>
+
+</body>
+</html>
